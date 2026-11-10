@@ -8,7 +8,14 @@ export default [
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   eslintConfigPrettier,
-  { ignores: ['**/node_modules', '**/dist'] },
+  {
+    ignores: [
+      '**/node_modules',
+      '**/dist',
+      // Temporary files that tsup writes next to tsup.config.ts while loading it
+      '**/*.bundled_*.{mjs,cjs}',
+    ],
+  },
   {
     rules: {
       '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],

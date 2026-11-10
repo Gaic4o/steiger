@@ -5,6 +5,9 @@ node_modules/
 dist/
 dist-bundle/
 
+# Temporary files that tsup writes while loading its config
+*.bundled_*
+
 # Output of 'npm pack'
 *.tgz
 
